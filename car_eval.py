@@ -67,7 +67,7 @@ def get_filtered_options(df, model=None, make=None, condition=None):
 
 def predict_price(car_data, model, scaler, label_encoder, feature_columns):
     
-    # try:
+    try:
         
         input_df = pd.DataFrame([car_data])
 
@@ -109,8 +109,8 @@ def predict_price(car_data, model, scaler, label_encoder, feature_columns):
         "max_predicted_price": max_predicted_price  
         }
         
-    # except Exception as e:
-    #     st.error(f"An error occured: {e}")
+    except Exception as e:
+        st.error(f"An error occured: {e}")
             
 def main():
     # header
