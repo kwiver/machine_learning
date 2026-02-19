@@ -196,16 +196,7 @@ def main():
     if condition and model_name and make:
         options = get_filtered_options(df, make=make, model=model_name, condition=condition)
         
-    # select transmission
-    transmission = st.selectbox(
-        "Transmission*",
-        options=[""] + options["transmissions"],
-        format_func=lambda  x: "Select Transmission" if x == "" else x,
-        disabled=not (make and model_name and year and condition)
-    )
-    
-    if transmission:
-        st.session_state.show_result = False
+     
         
     # get result
     if st.button("GET RESULT"):
